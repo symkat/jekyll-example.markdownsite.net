@@ -3,4 +3,4 @@ layout: page
 title: NoPermalink
 ---
 
-This is an `contact` page.
+This is an `nopermalink` page.
