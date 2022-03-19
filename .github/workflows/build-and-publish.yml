@@ -9,15 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses:  lemonarc/jekyll-action@1.0.0
-      - name: Remove old public
-        run: rm -rf public
-      - name: Make directory
-        run: mkdir -p public/jekyll-gh-pages-rewrite-dir-to-html && chmod 777 public -R
-      - name: Move
-        run: mv _site/* public/jekyll-gh-pages-rewrite-dir-to-html && rm -rf _site
+      #- name: Remove old public
+      #  run: rm -rf public
+      #- name: Make directory
+      #  run: mkdir -p public/jekyll-gh-pages-rewrite-dir-to-html && chmod 777 public -R
+      #- name: Move
+      #  run: mv _site/* public/jekyll-gh-pages-rewrite-dir-to-html && rm -rf _site
       - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
         with:
-          add: 'public'
+          add: '_site'
           author_name: Thibault DUPONCHELLE
           author_email: thibault.duponchelle@gmail.com
           message: 'Auto commit'
