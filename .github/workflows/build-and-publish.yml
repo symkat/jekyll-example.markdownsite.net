@@ -23,7 +23,7 @@ jobs:
           message: 'Auto commit'
           new_branch: custom-new-branch
           pathspec_error_handling: ignore
-          remove: './public/jekyll-gh-pages-rewrite-dir-to-html'
+          #remove: './public/jekyll-gh-pages-rewrite-dir-to-html'
           tag_push: '--force'
       - name: Publish
         run: true 
