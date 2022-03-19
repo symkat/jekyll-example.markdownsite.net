@@ -1,0 +1,31 @@
+name : ActiveMQ-cpanm
+
+on:
+  push: 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate
+        run: jekyll build
+      - name: Remove old public
+        run: rm -rf public
+  commit:
+    steps:
+      - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
+        with:
+          add: 'public'
+          author_name: Thibault DUPONCHELLE
+          author_email: thibault.duponchelle@gmail.com
+          message: 'Auto commit'
+          new_branch: custom-new-branch
+          pathspec_error_handling: ignore
+          remove: './public/jekyll-gh-pages-rewrite-dir-to-html'
+          tag_push: '--force'
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish
+        run: true 
