@@ -14,7 +14,7 @@ jobs:
       - name: Make directory
         run: mkdir -p public/jekyll-gh-pages-rewrite-dir-to-html
       - name: Move
-        run: mv _site public/jekyll-gh-pages-rewrite-dir-to-html
+        run: mv _site/* public/jekyll-gh-pages-rewrite-dir-to-html && rm -rf _site
       - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
         with:
           add: 'public'
